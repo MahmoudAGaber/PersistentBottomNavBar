@@ -49,10 +49,10 @@ Future<T?> pushNewScreenWithRouteSettings<T>(
 Future<T?> pushDynamicScreenReplacement<T>(
     BuildContext context,
     {required dynamic screen,
-      required bool? withNavBar,}) {
+       bool? withNavBar,}) {
   if (withNavBar == null) {
     withNavBar = true;
   }
-  return Navigator.of(context, rootNavigator: !withNavBar).pushReplacement<T>(screen);
+  return Navigator.of(context).pushReplacement<T>(screen);
 }
 
