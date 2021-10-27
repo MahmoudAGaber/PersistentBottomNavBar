@@ -45,23 +45,3 @@ Future<T?> pushNewScreenWithRouteSettings<T>(
           getPageRoute(pageTransitionAnimation,
               enterPage: screen, settings: settings));
 }
-
-Future pushNewScreenReplace(
-    BuildContext context, {
-      required Widget screen,
-      bool? withNavBar,
-      PageTransitionAnimation pageTransitionAnimation =
-          PageTransitionAnimation.cupertino,
-      PageRoute? customPageRoute,
-    }) {
-  if (withNavBar == null) {
-    withNavBar = true;
-  }
-  return Navigator.of(context, rootNavigator: !withNavBar).push(
-      customPageRoute as Route? ??
-          getPageRoute(pageTransitionAnimation, enterPage: screen)).then((value) => {
-            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>screen))
-  });
-}
-
-
