@@ -57,8 +57,10 @@ Future<T?> pushNewScreenReplace<T>(
   if (withNavBar == null) {
     withNavBar = true;
   }
-  return Navigator.of(context, rootNavigator: !withNavBar).pushReplacement<T>(
+  return Navigator.of(context, rootNavigator: !withNavBar).push<T>(
       customPageRoute as Route<T>? ??
-          getPageRoute(pageTransitionAnimation, enterPage: screen));
+          getPageRoute(pageTransitionAnimation, enterPage: screen)).then((value) => {
+            Navigator.pushReplacement(context, screen)
+  });
 }
 
