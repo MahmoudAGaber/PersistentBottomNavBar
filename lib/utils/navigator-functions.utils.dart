@@ -47,10 +47,9 @@ Future<T?> pushNewScreenWithRouteSettings<T>(
 }
 
 Future<T?> pushDynamicScreenReplacement<T>(
-    BuildContext context, {
-      required dynamic screen,
-      bool? withNavBar,
-    }) {
+    BuildContext context,
+    {required dynamic screen,
+      required bool? withNavBar,}) {
   if (withNavBar == null) {
     withNavBar = true;
   }
