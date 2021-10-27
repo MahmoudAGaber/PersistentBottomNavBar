@@ -54,5 +54,6 @@ Future<T?> pushNewScreenReplacement<T>(
   if (withNavBar == null) {
     withNavBar = true;
   }
-  return Navigator.of(context, rootNavigator: !withNavBar).pushReplacement<T>(screen);
+  return Navigator.of(context, rootNavigator: !withNavBar).pushReplacement(screen);
 }
+
