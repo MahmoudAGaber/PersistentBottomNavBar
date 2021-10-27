@@ -46,7 +46,7 @@ Future<T?> pushNewScreenWithRouteSettings<T>(
               enterPage: screen, settings: settings));
 }
 
-Future<T?> pushNewScreenReplace<T>(
+Future pushNewScreenReplace(
     BuildContext context, {
       required Widget screen,
       bool? withNavBar,
@@ -57,8 +57,8 @@ Future<T?> pushNewScreenReplace<T>(
   if (withNavBar == null) {
     withNavBar = true;
   }
-  return Navigator.of(context, rootNavigator: !withNavBar).push<T>(
-      customPageRoute as Route<T>? ??
+  return Navigator.of(context, rootNavigator: !withNavBar).push(
+      customPageRoute as Route? ??
           getPageRoute(pageTransitionAnimation, enterPage: screen)).then((value) => {
             Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>screen))
   });
