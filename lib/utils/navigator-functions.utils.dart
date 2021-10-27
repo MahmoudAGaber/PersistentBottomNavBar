@@ -53,6 +53,6 @@ Future<T?> pushDynamicScreenReplacement<T>(
   if (withNavBar == null) {
     withNavBar = true;
   }
-  return Navigator.of(context).pushReplacement<T>(screen);
+  return Navigator.pushReplacement(context, rootNavigator: !withNavBar,MaterialPageRoute(builder: (context)=>screen));
 }
 
